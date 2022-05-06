@@ -4,7 +4,7 @@ require_once('database/database.php');
 $allUser = selectAllUser();
 foreach ($allUser as $user) :
 ?>
-  <?php if ($user['email'] === $_SESSION['email']) : ?>
+  <?php if ($user['username'] === $_SESSION['username']) : ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky sticky-top text-white text-center">
       <a class="navbar-brand" href="#">
         <img src="images/user/<?= $user['profile'] ?>" width="60" height="60" class="d-inline-block align-top rounded rounded-circle" alt="">

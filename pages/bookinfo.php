@@ -6,7 +6,7 @@ $number = countAllBook();
 ?>
 
 <div class="container rounded p-4 mb-2 mt-2">
-    <?php if ($_SESSION['username'] == "Admin" or $_SESSION['username'] == "admin") : ?>
+    <?php if ($_SESSION['email'] == "Admin" or $_SESSION['email'] == "admin") : ?>
         <a href="addbook_html.php" class="text-decoration-none btn btn-success">Add Book</a>
     <?php endif; ?>
     <div class="card mt-4 mb-4" style="background: #fff; height: 10vh; text-align:center; display:flex; justify-content:center">

@@ -3,7 +3,7 @@
 // Connect to database
 function database()
 {
-    return new mysqli('localhost', 'root', '', 'online-librabry');
+    return new mysqli('localhost', 'root', '', 'digital_library');
 }
 
 // Create book
@@ -150,16 +150,13 @@ function createUser($value)
     $password = $value['password'];
     $passEnc = password_hash($password, PASSWORD_DEFAULT);
     $role = "User";
-
     $profileName = $_FILES['profile']['name'];
     $profileSize = $_FILES['profile']['size'];
     $profileType = $_FILES['profile']['type'];
     $profile_tmp_name = $_FILES['profile']['tmp_name'];
-
     $extension = pathinfo($profileName, PATHINFO_EXTENSION);
     $extensionLocal = strtolower($extension);
     $allowExtension = array('jpg', 'jpeg', 'png');
-
     $isValidEmail = true;
     $users = selectAllUser();
     foreach ($users as $user) {
@@ -167,15 +164,14 @@ function createUser($value)
             $isValidEmail = false;
         }
     }
-
     if ($isValidEmail and in_array($extensionLocal, $allowExtension)) {
         $newImageName = uniqid('post-', true) . '.' . $extensionLocal;
         $profile_dir = "images/user/" . $profileName;
-
         move_uploaded_file($profile_tmp_name, $profile_dir);
         return database()->query("INSERT INTO users (username, profile, email, password, role) VALUES('$username', '$profileName', '$email', '$passEnc', '$role')");
     }
 }
+
 
 // Select all user
 function selectAllUser()
@@ -186,14 +182,15 @@ function selectAllUser()
 // User login
 function verifyUser($value)
 {
-    $db = new mysqli('localhost', 'root', '', 'online-librabry');
-    $email = $value['email'];
+
+    $db = new mysqli('localhost', 'root', '', 'digital_library');
+    $username = $value['username'];
     $password = $value['password'];
 
-    $allUser = $db->query("SELECT password, email FROM users where email = '$email'");
+    $allUser = $db->query("SELECT password, username FROM users where username = '$username'");
     $isValid = false;
     foreach ($allUser as $user) {
-        if (password_verify($password, $user['password']) and $user['email'] === $email) {
+        if (password_verify($password, $user['password']) and $user['username'] === $username) {
             $isValid = true;
         }
     }

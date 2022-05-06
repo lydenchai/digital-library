@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2021 at 08:59 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: May 06, 2022 at 09:00 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `online-librabry`
+-- Database: `digital_library`
 --
 
 -- --------------------------------------------------------
@@ -104,10 +104,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `profile`, `email`, `password`, `role`) VALUES
-(1, 'Admin', 'Admin.jpg', 'admin123@gmail.com', '$2y$10$nAC.8og/dsrUdgYFvA4xwOR9hZ.2a9fhjYqFh0g7TSTCCajTJ/DGC', 'Admin'),
-(9, 'Jame', 'jame123.jpg', 'jame@gmail.com', '$2y$10$US1L4B0zNrMtgQQTvNlk2eTrRGIaO2FtbpDQ5SYdVFSXCYLKLbH2m', 'User'),
-(12, 'Bella', 'Bella.jpg', 'bella@gmail.com', '$2y$10$69GBinzTSTQf8.6UOqO2e.JNq2u9H8spXKO/83eKJLkPlr797MAG2', 'User'),
-(20, 'Koemsak', 'processed.jpeg', 'koemsak@gmail.com', '$2y$10$rFAnetHCl3WZJ.khgO9BXuutmEfOnkNgcufLjbcJROwpmkwc/elfS', 'User');
+(1, 'Admin', 'Admin.jpg', 'admin@gmail.com', '$2y$10$nAC.8og/dsrUdgYFvA4xwOR9hZ.2a9fhjYqFh0g7TSTCCajTJ/DGC', 'Admin'),
+(21, 'Lyden', 'lyden chai.jpg', 'lyden@gmail.com', '$2y$10$EUkAnusMD8c9SU0PKLdkI.jmfYvghATCy9xNDzhHWxsVUOvOhgKSK', 'User'),
+(22, 'Vun ', 'vun.png', 'vun@gmail.com', '$2y$10$g5LZYwkSIucf5q2d916og.6OXSiwgId6vFcKV1Jvc25WeakF2TkHK', 'User');
 
 --
 -- Indexes for dumped tables
@@ -153,7 +152,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables

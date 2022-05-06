@@ -16,11 +16,11 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $isValid = verifyUser($_POST);
         session_start();
-        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['username'] = $_POST['username'];
         if ($isValid) {
             header("Location: http://localhost/Digital_Library/?page=home");
         } else {
-            $messageError = "Incorrect email or password";
+            $messageError = "Incorrect password or username";
         }
     }
     ?>
@@ -30,8 +30,8 @@
                 <h2 class=" text-center">Login</h2>
                 <p class="text-danger text-center"><?= $messageError ?></p>
                 <div class="form-group">
-                    <label for="email" class="font-weight-bold ">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+                    <label for="username" class="font-weight-bold ">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="username" name="username" required>
                 </div>
                 <div class="form-group">
                     <label for="password" class="font-weight-bold ">Password</label>
