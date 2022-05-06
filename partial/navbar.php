@@ -46,7 +46,7 @@ foreach ($allUser as $user) :
           <?php endif; ?>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <a href="http://localhost/Digital_Library/" class="btn border border-danger text-danger my-2 my-sm-0 m-2" type="submit">Logout</a>
+          <a href="http://localhost/Digital_Library/user_login.php" class="btn border border-danger text-danger my-2 my-sm-0 m-2" type="submit">Logout</a>
         </form>
       </div>
     </nav>
