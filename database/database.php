@@ -158,7 +158,6 @@ function createUser($value)
 
     $extension = pathinfo($profileName, PATHINFO_EXTENSION);
     $extensionLocal = strtolower($extension);
-
     $allowExtension = array('jpg', 'jpeg', 'png');
 
     $isValidEmail = true;
@@ -187,15 +186,14 @@ function selectAllUser()
 // User login
 function verifyUser($value)
 {
-
     $db = new mysqli('localhost', 'root', '', 'online-librabry');
-    $username = $value['username'];
+    $email = $value['email'];
     $password = $value['password'];
 
-    $allUser = $db->query("SELECT password, username FROM users where username = '$username'");
+    $allUser = $db->query("SELECT password, email FROM users where email = '$email'");
     $isValid = false;
     foreach ($allUser as $user) {
-        if (password_verify($password, $user['password']) and $user['username'] === $username) {
+        if (password_verify($password, $user['password']) and $user['email'] === $email) {
             $isValid = true;
         }
     }

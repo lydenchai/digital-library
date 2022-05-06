@@ -3,4 +3,4 @@ require_once('database/database.php');
 $id = $_GET['id'];
 $isDelete = deleteBookByID($id);
 
-header("Location: http://localhost/online-library-php/?page=bookinfo");
+header("Location: http://localhost/Digital_Library/?page=bookinfo");

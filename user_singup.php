@@ -18,7 +18,7 @@
         $_SESSION['username'] = $_POST['username'];
         $isCreate = createUser($_POST);
         if ($isCreate) {
-            header("Location: http://localhost/online-library-php/?page=home");
+            header("Location: http://localhost/Digital_Library/?page=home");
         } else {
             $message_error = "This email or username already exist, or image file must be JPG JPEG PNG";
         }
@@ -28,7 +28,6 @@
         <div class="col-sm-6 m-auto" style="background-color: #fff; border-radius: 5px; box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.083);">
             <form action="" method="POST" class="p-4 border border-light rounded" enctype="multipart/form-data">
                 <h2 class=" text-center">Register</h2>
-                <hr class="bg-white">
                 <p class="text-danger text-center"><?= $message_error ?></p>
                 <div class="form-group">
                     <label for="firstName" class="font-weight-bold ">Username</label>
@@ -42,13 +41,13 @@
                     <label for="password" class="font-weight-bold ">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
                 </div>
-                <label for="up" class="btn bg-dark" style="color: #fff">Add Photo</label>
+                <label for="up" class="btn bg-dark" style="color: #fff">Add Profile</label>
                 <div>
                     <input type="file" name="profile" class="form-control" ref="file" id="up" hidden>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-success mb-4 mt-4 form-control">Register</button>
-                    <p>Already a member? <a href="user_login.php" class="font-weight-bold text-primary">Login</a></p>
+                    <p>Already a member? <a href="user_login.php" class="font-weight-bold text-danger">Login</a></p>
                 </div>
             </form>
         </div>

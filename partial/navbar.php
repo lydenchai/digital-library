@@ -1,16 +1,15 @@
-<!--  -->
 <?php
 session_start();
 require_once('database/database.php');
 $allUser = selectAllUser();
 foreach ($allUser as $user) :
 ?>
-  <?php if ($user['username'] === $_SESSION['username']) : ?>
+  <?php if ($user['email'] === $_SESSION['email']) : ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky sticky-top text-white text-center">
       <a class="navbar-brand" href="#">
         <img src="images/user/<?= $user['profile'] ?>" width="60" height="60" class="d-inline-block align-top rounded rounded-circle" alt="">
       </a>
-      <small class="navbar-brand"><?= $user['username'] ?></small>
+      <small class="navbar-brand text-white"><?= $user['username'] ?></small>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -47,7 +46,7 @@ foreach ($allUser as $user) :
           <?php endif; ?>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <a href="http://localhost/online-library-php/" class="btn btn-outline-secondary text-danger my-2 my-sm-0 m-2" type="submit">Logout</a>
+          <a href="http://localhost/Digital_Library/" class="btn border border-danger text-danger my-2 my-sm-0 m-2" type="submit">Logout</a>
         </form>
       </div>
     </nav>

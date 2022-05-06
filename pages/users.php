@@ -4,8 +4,8 @@ $users = selectAllUser();
 ?>
 <div class="container rounded p-4 mb-2 mt-2">
   <h3 class="mb-4 text-white">Users</h3>
-  <div >
-    <table class="table mt-4">
+  <div>
+    <table class="table mt-4" style="box-shadow: 0px 2px 2px #babab8">
       <thead class="table-dark">
         <tr>
           <th scope="col">ID</th>

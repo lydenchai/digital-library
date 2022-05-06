@@ -16,11 +16,11 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $isValid = verifyUser($_POST);
         session_start();
-        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['email'] = $_POST['email'];
         if ($isValid) {
-            header("Location: http://localhost/online-library-php/?page=home");
+            header("Location: http://localhost/Digital_Library/?page=home");
         } else {
-            $messageError = "Incorrect password or username";
+            $messageError = "Incorrect email or password";
         }
     }
     ?>
@@ -28,11 +28,10 @@
         <div class="col-lg-6 col-md-12 col-sm-12 col-12 m-auto" style="background-color: #fff; border-radius: 5px; box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.083);">
             <form action="" method="POST" class="p-4 border border-light rounded">
                 <h2 class=" text-center">Login</h2>
-                <hr class="bg-white">
                 <p class="text-danger text-center"><?= $messageError ?></p>
                 <div class="form-group">
-                    <label for="name" class="font-weight-bold ">Username</label>
-                    <input type="text" class="form-control" id="name" placeholder="Username" name="username" required>
+                    <label for="email" class="font-weight-bold ">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="password" class="font-weight-bold ">Password</label>
@@ -40,7 +39,7 @@
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary mb-4 mt-4 form-control">Login</button>
-                    <p>Don't have an account yet? <a href="user_singup.php" class="font-weight-bold text-success">Register</a></p>
+                    <p>Don't have an account yet? <a href="user_singup.php" class="font-weight-bold text-danger">Register</a></p>
                 </div>
             </form>
         </div>

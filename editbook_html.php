@@ -10,13 +10,14 @@
     <title>Edit book</title>
     <style>
         body {
-            background: #f0eded;
+            background-image: linear-gradient(to left, gray, skyblue);
         }
 
         form {
-            background-color: #888;
+            background: rgb(255, 255, 255);
+            box-shadow: 0px 4px 8px 8px rgba(0, 0, 0, 0.083);
             width: 700px;
-            padding: 15px;
+            padding: 30px;
             margin: 10px auto;
             border-radius: 3px;
             background: #fff;
@@ -35,70 +36,67 @@
     foreach ($books as $book) :
     ?>
         <form action="editbook.php" method="POST" enctype="multipart/form-data">
+            <h2 class=" text-center">Edite Book</h2>
             <input type="hidden" name="id" value="<?= $book['book_id'] ?>">
             <div class="form-group">
-                <label class="col-sm-4 col-form-label font-weight-bold">Author</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="author" placeholder="Author" name="author" value="<?= $book['book_author'] ?>">
-                </div>
+                <label class="font-weight-bold">Author</label>
+
+                <input type="text" class="form-control" id="author" placeholder="Author" name="author" value="<?= $book['book_author'] ?>">
+
             </div>
             <div class="form-group">
-                <label class="col-sm-4 col-form-label font-weight-bold">Title</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="<?= $book['title'] ?>">
-                </div>
+                <label class="font-weight-bold">Title</label>
+
+                <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="<?= $book['title'] ?>">
+
             </div>
             <div class="form-group">
-                <label class="col-sm-4 col-form-label font-weight-bold">Description</label>
-                <div class="col-sm-8">
-                    <textarea type="text" style="height: 20vh" class="form-control" id="description" placeholder="Description" name="des"><?= $book['description'] ?></textarea>
-                </div>
+                <label class="font-weight-bold">Description</label>
+
+                <textarea type="text" style="height: 20vh" class="form-control" id="description" placeholder="Description" name="des"><?= $book['description'] ?></textarea>
+
             </div>
             <div class="form-group">
-                <label class="col-sm-4 col-form-label font-weight-bold">Category</label>
-                <div class="col-sm-8">
-                    <select class="form-control" name="category">
-                        <?php if ($book['category_id'] == 1) : ?>
-                            <option value="1" selected>Novel Book</option>
-                            <option value="2">General Knowledge</option>
-                            <option value="3">Motivation Book</option>
-                            <option value="4">Funnies Book</option>
-                            <option value="5">Other Book</option>
-                        <?php elseif ($book['category_id'] == 2) : ?>
-                            <option value="1">Novel Book</option>
-                            <option value="2" selected>General Knowledge</option>
-                            <option value="3">Motivation Book</option>
-                            <option value="4">Funnies Book</option>
-                            <option value="5">Other Book</option>
-                        <?php elseif ($book['category_id'] == 3) : ?>
-                            <option value="1">Novel Book</option>
-                            <option value="2">General Knowledge</option>
-                            <option value="3" selected>Motivation Book</option>
-                            <option value="4">Funnies Book</option>
-                            <option value="5">Other Book</option>
-                        <?php elseif ($book['category_id'] == 4) : ?>
-                            <option value="1">Novel Book</option>
-                            <option value="2">General Knowledge</option>
-                            <option value="3">Motivation Book</option>
-                            <option value="4" selected>Funnies Book</option>
-                            <option value="5">Other Book</option>
-                        <?php elseif ($book['category_id'] == 5) : ?>
-                            <option value="1">Novel Book</option>
-                            <option value="2">General Knowledge</option>
-                            <option value="3">Motivation Book</option>
-                            <option value="4">Funnies Book</option>
-                            <option value="5" selected>Other Book</option>
-                        <?php endif; ?>
-                    </select>
-                </div>
-                <div class="form-group d-flex justify-content-end ml-3">
-                    <div style="margin: 5px;">
-                        <a href="http://localhost/online-library-php/?page=bookinfo" class="btn btn-danger">Cancel</a>
-                    </div>
-                    <div style="margin: 5px;">
-                        <button type="submit" name="upload" class="btn btn-success mr-3">Update</button>
-                    </div>
-                </div>
+                <label class="font-weight-bold">Category</label>
+                <select class="form-control" name="category">
+                    <?php if ($book['category_id'] == 1) : ?>
+                        <option value="1" selected>Novel Book</option>
+                        <option value="2">General Knowledge</option>
+                        <option value="3">Motivation Book</option>
+                        <option value="4">Funnies Book</option>
+                        <option value="5">Other Book</option>
+                    <?php elseif ($book['category_id'] == 2) : ?>
+                        <option value="1">Novel Book</option>
+                        <option value="2" selected>General Knowledge</option>
+                        <option value="3">Motivation Book</option>
+                        <option value="4">Funnies Book</option>
+                        <option value="5">Other Book</option>
+                    <?php elseif ($book['category_id'] == 3) : ?>
+                        <option value="1">Novel Book</option>
+                        <option value="2">General Knowledge</option>
+                        <option value="3" selected>Motivation Book</option>
+                        <option value="4">Funnies Book</option>
+                        <option value="5">Other Book</option>
+                    <?php elseif ($book['category_id'] == 4) : ?>
+                        <option value="1">Novel Book</option>
+                        <option value="2">General Knowledge</option>
+                        <option value="3">Motivation Book</option>
+                        <option value="4" selected>Funnies Book</option>
+                        <option value="5">Other Book</option>
+                    <?php elseif ($book['category_id'] == 5) : ?>
+                        <option value="1">Novel Book</option>
+                        <option value="2">General Knowledge</option>
+                        <option value="3">Motivation Book</option>
+                        <option value="4">Funnies Book</option>
+                        <option value="5" selected>Other Book</option>
+                    <?php endif; ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <div>
+                    <a href="http://localhost/Digital_Library/?page=bookinfo" class="btn btn-danger" style="width: 100px;">Cancel</a>
+                    <button type="submit" name="upload" class="btn btn-success mr-3" style="width: 100px;">Update</button>
+                <div>
             </div>
         </form>
     <?php endforeach; ?>
