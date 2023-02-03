@@ -9,6 +9,8 @@
     <title>Register</title>
 </head>
 
+
+<!-- Body -->
 <body style="background-image: linear-gradient(to left, gray, skyblue);">
     <?php
     require_once('database/database.php');
